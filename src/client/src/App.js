@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {Routes, Route, Navigate} from 'react-router-dom';
 
+import { NavBar, ContactBar } from "./components/Bars";
 import MainPage from "./pages/MainPage";
 import PhotoPage from "./pages/PhotoPage";
 
@@ -17,18 +18,17 @@ const App=() =>{
 
   return (
     <div className="App">
-      <header className="App-header">
-        <Routes>
-          <Route path='/' element={<MainPage/>}/>
-          <Route path="/photographies" element={<PhotoPage/>}/>
-          <Route path='*' element={<Navigate to='/' />} />
-        </Routes>
-        
-        <p>
-          Edit <code>client/server/routes/api.js</code> and save to reload
-          Node.js app.
-        </p>
+      <header className="header">
+      <NavBar/>
       </header>
+      <main>  
+        <Routes>
+          <Route path="/" element={<MainPage/>}/>
+          <Route path="/photographies" element={<PhotoPage/>}/>
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </main>
+      <footer><ContactBar/></footer>
     </div>
   );
 }

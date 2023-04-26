@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import AboutMeHeader from '../components/AboutMeHeader';
-
+import AboutMe from '../components/AboutMe';
 const PhotoPage =()=>{
 return (
-    <AboutMeHeader pageType="photoPage"/>
+<>    <AboutMe pageType="photoPage"/>
+</>
+
 )
 };
 

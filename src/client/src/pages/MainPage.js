@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import AboutMeHeader from '../components/AboutMeHeader';
+import { ContactBar } from '../components/Bars';
+import AboutMe from '../components/AboutMe';
 
 const MainPage =()=>{
 return (
-    <AboutMeHeader pageType="mainPage"/>
+    <div>
+        <AboutMe pageType="mainPage"/> 
+    </div>
+
 )
 };
 
