@@ -1,0 +1,48 @@
+.header{display: flex;
+    justify-content: flex-end;}
+
+.profile-container {
+    & .mainPage{}
+    & .photoPage{
+        display:flex;
+        
+    }
+    #profile-pic{
+        border-radius: 50%;
+        height: 200px;
+    }
+
+}
+
+.nav-bar {
+    display: flex;
+
+    max-width: fit-content;
+    justify-content: space-between;
+        & a {
+            font-weight: 700;
+            padding: 4px;
+            margin: 3px;
+        }
+       & .active{
+        padding: 4px;
+        box-shadow: 0 0.1rem 2rem rgba(0, 0, 0, 0.249);
+    border-radius: 0.5rem;
+    background: #fff;
+       }
+}
+
+
+.skill-badges{
+    display: flex;
+&-single{
+    display: flex;
+    padding: 2px;
+    margin:5px;
+    width:30px;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.183);
+border-radius: 0.5rem;
+background: #fff;
+   
+}
+}
