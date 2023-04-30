@@ -1,14 +1,42 @@
 *{
     color: rgb(35, 35, 35);
     font-family:  Montserrat,sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     text-decoration: none;
+    list-style: none;
 
 }
 
-.profile-container{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-   
+body{
+    padding: 3px 40px;
+    @media screen and (max-width: 565px){
+        padding: 1px 3px;
+    } 
+    height: 100%;
 }
+
+
+footer {
+    // position:fixed;
+    // left:0px;
+    // bottom:0px;
+    height:60px;
+    width:100%;
+    border-top:  solid rgba(96, 204, 220, 0.53);;
+
+ }
+.main-container{
+    &-about{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (max-width: 955px){
+        aside {
+            display: none;         
+        }
+        display: flex;
+        justify-content: center;
+    } 
+}
+

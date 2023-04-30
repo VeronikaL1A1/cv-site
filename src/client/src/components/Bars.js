@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import {
   AiFillInstagram, AiFillLinkedin, AiFillGithub, AiFillMail,
 } from 'react-icons/ai';
 
-import { contactBarData } from '../data/bars';
+import { contactBarData } from '../data/data';
 
 export const NavBar = () => (
   <nav className="nav-bar">

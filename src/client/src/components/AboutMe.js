@@ -1,12 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import {
   DiReact, DiJavascript1, DiCss3, DiHtml5, DiGit,
 } from 'react-icons/di';
 
 import PhotoMe from '../assets/pictures/PhotoMe.jpg';
+// import fetchData from '../utils/utils';
 
 const AboutMe = ({ pageType }) => {
+  const [data, setData] = useState('');
+
+  useEffect(() => {
+    axios.get('https://api.github.com/users/VeronikaL1A1').then((response) => setData(response.data)).catch((error) => {
+      const replacementData = {
+        error: error.message,
+        name: 'Veronika Lacusova',
+        bio: 'Junior frontend developer with beginner experience in backend NodeJS programming. Keen to learn new technologies, DevOps tools and full stack.',
+      }; setData(replacementData);
+    });
+  }, []);
+
   const icons = [
     <DiReact fill="#61dbfb" size="2em" />,
     <DiJavascript1 fill="#f7d801" size="2em" />,
@@ -22,15 +36,24 @@ const AboutMe = ({ pageType }) => {
   );
 
   return (
-    <div className={`profile-container ${pageType}`}>
+    <section className={`profile ${pageType}`}>
       <img alt="author profile" id="profile-pic" src={PhotoMe} />
-      <p>
-        sdgfsdgsdg
-        sdgfsdgsdgsdfsdg
-      </p>
+      {data.error ? (
+        <p>
+          {data.error}
+        </p>
+      ) : null}
+      <h1>
+        {data.name}
+      </h1>
+      <p className="profile-bio">{data.bio}</p>
       {pageType === 'mainPage' ? skillBadges : null}
-    </div>
+    </section>
   );
+};
+
+AboutMe.propTypes = {
+  pageType: PropTypes.string.isRequired,
 };
 
 export default AboutMe;
