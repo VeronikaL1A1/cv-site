@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+
 import PropTypes from 'prop-types';
 import {
   DiReact, DiJavascript1, DiCss3, DiHtml5, DiGit,
@@ -7,17 +7,8 @@ import {
 
 import PhotoMe from '../assets/pictures/PhotoMe.jpg';
 // import fetchData from '../utils/utils';
-import { replacementData } from '../data/data';
 
-const AboutMe = ({ pageType }) => {
-  const [data, setData] = useState('');
-
-  useEffect(() => {
-    axios.get('https://api.github.com/users/VeronikaL1A1').then((response) => setData(response.data)).catch((error) => {
-      setData(replacementData(error));
-    });
-  }, []);
-
+const AboutMe = ({ pageType, data }) => {
   const icons = [
     <DiReact fill="#61dbfb" size="2em" />,
     <DiJavascript1 fill="#f7d801" size="2em" />,
@@ -39,6 +30,7 @@ const AboutMe = ({ pageType }) => {
       { data.error && (
         <p>
           Sorry, no github data:
+          {' '}
           {data.error}
         </p>
       )}
@@ -56,6 +48,7 @@ const AboutMe = ({ pageType }) => {
 
 AboutMe.propTypes = {
   pageType: PropTypes.string.isRequired,
+  data: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
 };
 
 export default AboutMe;

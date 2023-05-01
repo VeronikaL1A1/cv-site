@@ -1,11 +1,11 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import { ContactBar } from '../components/Bars';
 import AboutMe from '../components/AboutMe';
 import JobsTimeline from '../components/JobsTimeline';
 import { hobbies } from '../data/data';
 
-const MainPage = () => (
+const MainPage = ({ data }) => (
   <section className="main">
     <div className="main-about centred">
       <aside className="hobbies hidden">
@@ -26,7 +26,7 @@ const MainPage = () => (
           ))}
         </ul>
       </aside>
-      <AboutMe pageType="mainPage" />
+      <AboutMe data={data} pageType="mainPage" />
     </div>
     <section className="jobs">
       <h1 className="title-font centred-text">Professional experience</h1>
@@ -34,5 +34,9 @@ const MainPage = () => (
     </section>
   </section>
 );
+
+MainPage.propTypes = {
+  data: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+};
 
 export default MainPage;
