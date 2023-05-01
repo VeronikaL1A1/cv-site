@@ -15,28 +15,77 @@ body{
     height: 100%;
 }
 
+header{
+    display: flex;
+    justify-content: flex-end;
+}
+.nav-bar {
+    display: flex;
+    max-width: fit-content;
+    justify-content: space-between;
+   margin-bottom:30px ;
+        & a {
+            font-weight: 700;
+            padding: 4px 8px;
+            margin: 5px;
+        }
+       & .active{
+        padding: 4px;
+        box-shadow: 0 0.1rem 2rem rgba(0, 0, 0, 0.249);
+    border-radius: 0.5rem;
+    background: #fff;
+       }
+}
 
 footer {
-    // position:fixed;
-    // left:0px;
-    // bottom:0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     height:60px;
     width:100%;
-    border-top:  solid rgba(96, 204, 220, 0.53);;
+    border-top:  solid rgba(96, 204, 220, 0.53);
 
  }
-.main-container{
+ .contact-bar {
+    display: flex;
+    padding: 5px 50px;
+
+    div:first-child{
+        padding-right:20px ;
+        align-self: center;
+        font-size: 18px;
+        font-family: Kalam;
+    }
+    &-icon {
+        display: flex;
+        padding: 0 5px;
+        margin: 0 5px;
+        height: 30px;
+        width: 30px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.main{
     &-about{
         display:grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
-
-    @media screen and (max-width: 955px){
-        aside {
-            display: none;         
-        }
-        display: flex;
-        justify-content: center;
-    } 
 }
 
+.photographies{
+    display:grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+// --- media screen rules ---
+@media screen and (max-width: 955px){
+    .centred{
+        display: flex;
+        justify-content: center;
+    }
+   .hidden {
+        display: none;         
+    }
+} 

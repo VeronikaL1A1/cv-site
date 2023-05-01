@@ -2,12 +2,27 @@ import React from 'react';
 import { jobsData } from '../data/data';
 
 const JobsTimeline = () => (
-  <div>
+  <div className="jobs-container">
     {
                 jobsData.map((job) => (
                   <>
-                    <div>{job.dates}</div>
-                    <h2>jh</h2>
+                    <div className="jobs-dates centred-text">
+                      {' '}
+                      <hr />
+                      {job.dates}
+                      <hr />
+                    </div>
+                    <h2>
+                      {job.companyName}
+                      {' '}
+                      -
+                      {' '}
+                      <span>
+                        {job.position}
+                      </span>
+                    </h2>
+
+                    <p>{job.description}</p>
                   </>
                 ))
             }

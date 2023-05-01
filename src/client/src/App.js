@@ -19,7 +19,7 @@ const App = () =>
     <div className="App">
 
       <main>
-        <header className="header">
+        <header>
           <NavBar />
         </header>
         <Routes>

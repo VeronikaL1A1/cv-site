@@ -6,35 +6,33 @@ import JobsTimeline from '../components/JobsTimeline';
 import { hobbies } from '../data/data';
 
 const MainPage = () => (
-  <div className="main-container">
-    <div className="main-container-about">
-      <aside>
-        <div className="hobbies">
-          <div className="title">
-            My hobbies
-            <br />
-            and
-            <br />
-            passions
-          </div>
-          <ul>
-            {hobbies.map((hobby, i) => (
-              <li key={i}>
-                <span> ∞</span>
-                {hobby}
-                <span> ∞</span>
-              </li>
-            ))}
-          </ul>
+  <section className="main">
+    <div className="main-about centred">
+      <aside className="hobbies hidden">
+        <div className="title title-font">
+          My hobbies
+          <br />
+          and
+          <br />
+          passions
         </div>
+        <ul>
+          {hobbies.map((hobby, i) => (
+            <li key={i}>
+              <hr />
+              {hobby}
+              <hr />
+            </li>
+          ))}
+        </ul>
       </aside>
       <AboutMe pageType="mainPage" />
     </div>
-    <section>
-      <h1>Professional experience</h1>
+    <section className="jobs">
+      <h1 className="title-font centred-text">Professional experience</h1>
       <JobsTimeline />
     </section>
-  </div>
+  </section>
 );
 
 export default MainPage;

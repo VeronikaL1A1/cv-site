@@ -17,14 +17,15 @@ export const NavBar = () => (
 
 export const ContactBar = () => {
   const icons = {
-    linkedin: <AiFillLinkedin />,
-    instagram: <AiFillInstagram />,
-    email: <AiFillMail />,
-    github: <AiFillGithub />,
+    linkedin: <AiFillLinkedin size="1.5em" />,
+    instagram: <AiFillInstagram size="1.5em" />,
+    email: <AiFillMail size="1.5em" />,
+    github: <AiFillGithub size="1.5em" />,
   };
   return (
-    <div>
-      {contactBarData.map(({ icon, path }, i) => (<a href={path} key={i}>{icons[icon]}</a>))}
+    <div className="contact-bar">
+      <div>Connect at:</div>
+      {contactBarData.map(({ icon, path }, i) => (<div className="contact-bar-icon shadow-box" key={i}><a href={path} key={i}>{icons[icon]}</a></div>))}
     </div>
 
   );

@@ -7,17 +7,14 @@ import {
 
 import PhotoMe from '../assets/pictures/PhotoMe.jpg';
 // import fetchData from '../utils/utils';
+import { replacementData } from '../data/data';
 
 const AboutMe = ({ pageType }) => {
   const [data, setData] = useState('');
 
   useEffect(() => {
     axios.get('https://api.github.com/users/VeronikaL1A1').then((response) => setData(response.data)).catch((error) => {
-      const replacementData = {
-        error: error.message,
-        name: 'Veronika Lacusova',
-        bio: 'Junior frontend developer with beginner experience in backend NodeJS programming. Keen to learn new technologies, DevOps tools and full stack.',
-      }; setData(replacementData);
+      setData(replacementData(error));
     });
   }, []);
 
@@ -31,19 +28,24 @@ const AboutMe = ({ pageType }) => {
 
   const skillBadges = (
     <div className="skill-badges">
-      { icons.map((icon, i) => (<div className="skill-badges-single" key={i}>{icon}</div>))}
+      { icons.map((icon, i) => (<div className="skill-badges-single shadow-box" key={i}>{icon}</div>))}
     </div>
   );
 
+  console.log(data);
   return (
     <section className={`profile ${pageType}`}>
       <img alt="author profile" id="profile-pic" src={PhotoMe} />
-      {data.error ? (
+      { data.error && (
         <p>
+          Sorry, no github data:
           {data.error}
         </p>
-      ) : null}
-      <h1>
+      )}
+      {typeof data !== 'object' && (
+        <h3>Loading github data ...</h3>
+      )}
+      <h1 className="title-font centred-text">
         {data.name}
       </h1>
       <p className="profile-bio">{data.bio}</p>
