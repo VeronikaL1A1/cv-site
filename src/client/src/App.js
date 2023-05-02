@@ -8,17 +8,16 @@ import PhotoPage from './pages/PhotoPage';
 import { replacementData } from './data/data';
 
 const App = () => {
-  const [data, setData] = useState('');
+  // fetch and send data only to 2nd child to prevent refetch of aboutMeDetails when navigating menu
+  const [data, setData] = useState({});
   useEffect(() => {
     axios.get('https://api.github.com/users/VeronikaL1A1').then((response) => setData(response.data)).catch((error) => {
       setData(replacementData(error));
     });
   }, []);
 
-  console.log(data);
   return (
     <div className="App">
-
       <main>
         <header>
           <NavBar />
@@ -34,14 +33,5 @@ const App = () => {
     </div>
   );
 };
-// const [users, setUsers] = useState([]);
-
-// useEffect(() => {
-//   fetch('/api/users')
-//     .then((res) => res.json())
-//     .then((json) => setUsers(json.users));
-//   // Specify how to clean up after this effect:
-//   return () => {};
-// }, []); // empty 2nd arg - only runs once
 
 export default App;

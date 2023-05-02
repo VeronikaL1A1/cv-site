@@ -24,6 +24,6 @@ const PhotoPage = ({ data }) => (
 );
 
 PhotoPage.propTypes = {
-  data: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+  data: PropTypes.object.isRequired,
 };
 export default PhotoPage;

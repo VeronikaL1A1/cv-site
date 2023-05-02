@@ -6,7 +6,6 @@ import {
 } from 'react-icons/di';
 
 import PhotoMe from '../assets/pictures/PhotoMe.jpg';
-// import fetchData from '../utils/utils';
 
 const AboutMe = ({ pageType, data }) => {
   const icons = [
@@ -34,7 +33,7 @@ const AboutMe = ({ pageType, data }) => {
           {data.error}
         </p>
       )}
-      {typeof data !== 'object' && (
+      {Object.keys(data) === 0 && (
         <h3>Loading github data ...</h3>
       )}
       <h1 className="title-font centred-text">
@@ -48,7 +47,7 @@ const AboutMe = ({ pageType, data }) => {
 
 AboutMe.propTypes = {
   pageType: PropTypes.string.isRequired,
-  data: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+  data: PropTypes.object.isRequired,
 };
 
 export default AboutMe;
