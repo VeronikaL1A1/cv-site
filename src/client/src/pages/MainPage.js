@@ -27,6 +27,7 @@ const MainPage = ({ data }) => (
         </ul>
       </aside>
       <AboutMe data={data} pageType="mainPage" />
+      <div className="arrow-down hidden" />
     </div>
     <section className="jobs">
       <h1 className="title-font centred-text">Professional experience</h1>

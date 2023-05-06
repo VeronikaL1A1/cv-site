@@ -1,3 +1,14 @@
+import image1 from '../assets/pictures/image1.jpeg';
+import image2 from '../assets/pictures/image2.jpeg';
+import image3 from '../assets/pictures/image3.jpeg';
+import image4 from '../assets/pictures/image4.jpeg';
+import image5 from '../assets/pictures/image5.jpeg';
+import image6 from '../assets/pictures/image6.jpeg';
+import image7 from '../assets/pictures/image7.jpeg';
+import image8 from '../assets/pictures/image8.jpeg';
+
+export const pictures = [image1, image2, image3, image4, image5, image6, image7, image8];
+
 export const replacementData = (err) => ({
   error: err.message,
   name: 'Veronika Lacusova',
