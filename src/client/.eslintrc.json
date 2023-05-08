@@ -23,6 +23,7 @@
               "extensions": [".js", ".jsx"]
             }
           ],
+          "react/jsx-props-no-spreading":0,
           "react/forbid-prop-types":0,
           "max-len":0,
           "no-undef":0,

@@ -14,7 +14,7 @@ const PhotoPage = ({ data }) => {
 
       <div className="photographies-container">
         <div className="photographies-carussel">
-          <img alt="myown" className="photographies-carussel-content" src={pictures[picNum]} />
+          <img alt={`myPhoto-${picNum}`} className="photographies-carussel-content" src={pictures[picNum]} />
         </div>
         <div className="photographies-btns">
           <button type="button" onClick={() => picNum > 0 && setPicNum(picNum - 1)}>

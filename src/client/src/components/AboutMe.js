@@ -22,7 +22,6 @@ const AboutMe = ({ pageType, data }) => {
     </div>
   );
 
-  console.log(data);
   return (
     <section className={`profile ${pageType}`}>
       <img alt="author profile" id="profile-pic" src={PhotoMe} />
@@ -45,9 +44,14 @@ const AboutMe = ({ pageType, data }) => {
   );
 };
 
+AboutMe.defaultProps = {
+  data: {
+    error: false,
+  },
+};
 AboutMe.propTypes = {
   pageType: PropTypes.string.isRequired,
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object,
 };
 
 export default AboutMe;

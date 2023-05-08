@@ -21,14 +21,14 @@ describe('App', () => {
     expect(getByText('Curriculum Vitae')).toBeInTheDocument();
     expect(getByText('Photographies')).toBeInTheDocument();
     expect(getByText('Connect at:')).toBeInTheDocument();
+    expect(getByText('Veronika Lacusova')).toBeInTheDocument();
   });
+
   // it('should handle error when fetching data from the API', async () => {
   //   const error = new Error({ data: { message: 'Something went wrong' } });
   //   const rejectedFetch = axios.get.mockRejectedValue(error);
-
   //   const { getByText } = render(<BrowserRouter><App /></BrowserRouter>);
   //   await waitFor(() => expect(rejectedFetch).toHaveBeenCalledTimes(1));
-
   //   expect(getByText('Something went wrong')).toBeInTheDocument();
   // });
 });
