@@ -97,9 +97,12 @@
     &-container{
         width:80%;
         align-self: center;
+        display: flex;
+        flex-direction: column;
         span{
             font-weight: 100;
         }
+  
     }
     &-dates{
         display: flex;
@@ -111,10 +114,12 @@
         }
     }
     h2{
-      padding:5px 50px
+      padding:0.7em 7em;
     }
-    p{    width: 60%;
-        padding:5px 70px
+    p{    
+        width: 60%;
+        margin-bottom: 1.5em;
+        align-self: center;
     }
 }
 
